@@ -13,6 +13,7 @@ import math
 
 SEND_WAVE_BUTTON = "SAVE_WAVE_BUTTON"
 
+
 class towerDefense(Animation):
     def init(self):
         self.makeBoard()
@@ -161,8 +162,8 @@ class towerDefense(Animation):
                     self.newTower(row, col, self.clickedButton.iconColor)
                     self.towerButtonClicked = False
                     self.clickedButton = None
-                elif (self.whichButton(event.x, event.y) == SEND_WAVE_BUTTON and
-                      self.isEnemyWave is False):
+                elif (self.whichButton(event.x, event.y) == SEND_WAVE_BUTTON
+                      and self.isEnemyWave is False):
                     self.newEnemyWave()
                     self.towerButtonClicked = False
                 elif (self.whichButton(event.x, event.y) is not None and
@@ -176,7 +177,8 @@ class towerDefense(Animation):
                         self.towerButtonClicked = False
             else:
                 self.clickedButton = self.whichButton(event.x, event.y)
-                if self.clickedButton == SEND_WAVE_BUTTON and self.isEnemyWave is False:
+                if self.clickedButton == SEND_WAVE_BUTTON and\
+                        self.isEnemyWave is False:
                     self.newEnemyWave()
                     self.clickedButton = None
                 elif (self.clickedButton is not None and
